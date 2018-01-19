@@ -117,7 +117,7 @@ namespace ninja.test {
         [TestMethod]
         public void CalculateInvoiceTotalPriceWithTaxes() {
 
-            long id = 1005;
+            long id = 1003;
             InvoiceManager manager = new InvoiceManager();
             Invoice invoice = manager.GetById(id);
 
