@@ -49,7 +49,7 @@ namespace ninja.model.Manager {
 
         }
 
-        public void UpdateDetail(long id, IList<InvoiceDetail> detail) {
+        public void UpdateDetail(long id, IList<InvoiceDetail> details) {
 
             /*
               Este método tiene que reemplazar todos los items del detalle de la factura
@@ -58,8 +58,13 @@ namespace ninja.model.Manager {
 
             #region Escribir el código dentro de este bloque
 
-            throw new NotImplementedException();
+            Invoice invoice = this.GetById(id);
 
+            invoice.DeleteDetails();
+
+            foreach (InvoiceDetail detail in details)
+                invoice.AddDetail(detail);
+           
             #endregion Escribir el código dentro de este bloque
 
         }
