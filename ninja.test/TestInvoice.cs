@@ -73,7 +73,12 @@ namespace ninja.test {
 
             #region Escribir el código dentro de este bloque
 
-            throw new NotImplementedException();
+            InvoiceManager manager = new InvoiceManager();
+            long id = 1004;
+            
+            manager.Delete(id);
+
+            Assert.IsFalse(manager.Exists(id));
 
             #endregion Escribir el código dentro de este bloque
 
@@ -112,7 +117,7 @@ namespace ninja.test {
         [TestMethod]
         public void CalculateInvoiceTotalPriceWithTaxes() {
 
-            long id = 1005;
+            long id = 1003;
             InvoiceManager manager = new InvoiceManager();
             Invoice invoice = manager.GetById(id);
 
